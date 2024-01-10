@@ -153,23 +153,12 @@ output application/json
                 <ee:set-payload><![CDATA[%dw 2.0
 output application/json
 ---
-[
-  {
-    state: "texas",
-    report: {
-      total: 46744,
-      positive: 436744,
-      recovered: 433744,
-      death: 300,
-      vaccinated: 7847848
-    }
-  }
-]]]></ee:set-payload>
+payload]]></ee:set-payload>
             </ee:message>
         </ee:transform>
     </flow>
     <flow name="get:\(nationalID):mss-uhub-sapi-config">
-        <flow-ref doc:name="Flow Reference" doc:id="137d7f93-8bca-42b0-b421-51a2044e505c" name="get-covid-case-by-national-idSub_Flow"/>
+        <flow-ref doc:name="Flow Reference" doc:id="137d7f93-8bca-42b0-b421-51a2044e505c" name="get-covid-case-by-national-idFlow"/>
 		<ee:transform doc:name="Transform Message">
             <ee:variables>
                 <ee:set-variable variableName="nationalID">attributes.uriParams.'nationalID'</ee:set-variable>
