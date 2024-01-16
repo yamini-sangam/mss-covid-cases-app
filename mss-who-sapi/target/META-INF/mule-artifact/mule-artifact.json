@@ -1,0 +1,41 @@
+{
+  "configs": [
+    "global.xml",
+    "mss-mule-template.xml",
+    "global-error-handler-flow.xml",
+    "common-logger-flow.xml",
+    "mule-config-flow.xml",
+    "mule-implementation-flow.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "30068767-fc4c-4aa8-a407-1689ae032436:mss-mule-template:1.0.0",
+  "minMuleVersion": "4.4.0",
+  "requiredProduct": "MULE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "application-types.xml",
+        "common-logger-flow.xml",
+        "global-error-handler-flow.xml",
+        "global.xml",
+        "log4j2.xml",
+        "mss-mule-template.xml",
+        "mule-config-flow.xml",
+        "mule-implementation-flow.xml",
+        "properties/common-properties.yaml",
+        "properties/dev-properties.yaml",
+        "properties/local-properties.yaml",
+        "properties/prod-properties.yaml",
+        "properties/qa-preoperties.yaml",
+        "properties/uat-properties.yaml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}
