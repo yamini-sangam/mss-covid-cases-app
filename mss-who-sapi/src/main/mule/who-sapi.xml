@@ -11,8 +11,9 @@
                 <http:headers>#[vars.outboundHeaders default {}]</http:headers>
             </http:error-response>
         </http:listener>
-        <apikit:router config-ref="who-sapi-config" />
-        <error-handler>
+        <set-variable value="#[attributes.headers.'x-transaction-id' default uuid()]" doc:name="Set transactionId" doc:id="79990b6b-ce4a-489b-ab44-d0ebb31e3a0b" variableName="transactionId" />
+		<apikit:router config-ref="who-sapi-config" />
+		<error-handler>
             <on-error-propagate type="APIKIT:BAD_REQUEST">
                 <ee:transform doc:name="Transform Message">
                     <ee:message>
@@ -124,7 +125,8 @@ output application/json
         <logger level="INFO" message="get:\ping:who-sapi-config" />
     </flow>
     <flow name="post:\case:application\json:who-sapi-config">
-        <ee:transform doc:name="Transform Message">
+        <flow-ref doc:name="Flow Reference" doc:id="ea12fa9d-bbd2-454a-8d6a-e2c36fe66097" name="report-covid-case-to-who-sf"/>
+		<ee:transform doc:name="Transform Message">
             <ee:message>
                 <ee:set-payload><![CDATA[%dw 2.0
 output application/json
